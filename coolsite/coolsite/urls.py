@@ -23,3 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('cats.urls'))
 ]
+
+# Обработчик для страницы 404
+# мы указали использовать нашу функцию для отображения несуществующих страниц
+handler404 = pageNotFound
