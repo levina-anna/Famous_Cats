@@ -1,11 +1,19 @@
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.shortcuts import render, redirect
+from .models import *
+menu = ["О сайте", "Добавить статью", "Обратная связь", "Войти"]
 
 
 # функция представления для главной страницы
-def index(request): # request - это ссылка на класс HttpRequest
-    # на выходе эта функция формирует экземпляр класса HttpResponse
-    return HttpResponse("Страница приложения Cats")
+def index(request):
+    # Выберем все записи из таблицы и сохраним их в переменную
+    posts = Cats.objects.all()
+    return render(request, 'cats/index.html', {'posts': posts, 'menu': menu, 'title': 'Главная страница'})
+
+# функция представления для страницы "О сайте"
+def about(request):
+    return render(request, 'cats/about.html', {'menu': menu, 'title': 'О сайте'})
+
 
 # отображения списка статей по рубрикам
 def categories(request, categoriesid): # http://127.0.0.1:8000/categories/1/?name=Moosya&type=siberian
