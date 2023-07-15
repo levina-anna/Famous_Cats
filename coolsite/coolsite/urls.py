@@ -21,5 +21,5 @@ from cats.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cats/', include('cats.urls'))
+    path('', include('cats.urls'))
 ]
