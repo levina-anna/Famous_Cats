@@ -7,5 +7,5 @@ def index(request): # request - это ссылка на класс HttpRequest
     return HttpResponse("Страница приложения Cats")
 
 # отображения списка статей по рубрикам
-def categories(request):
-    return HttpResponse("<h1>Статьи по категориям</h1>")
+def categories(request, categoriesid):
+    return HttpResponse(f"<h1>Статьи по категориям</h1><p>{categoriesid}</p>")
