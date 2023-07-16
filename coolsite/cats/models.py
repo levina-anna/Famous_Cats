@@ -18,6 +18,13 @@ class Cats(models.Model):
     def get_absolute_url(self):
         return reverse('post', kwargs={'post_id': self.pk})
 
+    # Настрйка отображения модели в админ-панели
+    class Meta:
+        verbose_name = "Famous cats"
+        verbose_name_plural = "Famous cats"
+        ordering = ['time_create', 'title']
+
+
 # Модель для таблицы с категориями
 class Category(models.Model):
     name = models.CharField(max_length=100, db_index=True)
