@@ -14,11 +14,14 @@ menu = [{'title': "About website", 'url_name': 'about'},
 def index(request):
     # Выберем все записи из таблицы и сохраним их в переменную
     posts = Cats.objects.all()
+    categories = Category.objects.all()
 
     context = {
         'posts': posts,
+        'categories': categories,
         'menu': menu,
-        'title': 'Main page'
+        'title': 'Main page',
+        'cat_selected': 0,
     }
 
     return render(request, 'cats/index.html', context=context)
@@ -48,6 +51,26 @@ def login(request):
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
 
+
 # Обработчик страницы "Read post"
 def show_post(request, post_id):
     return HttpResponse(f'Отображение статьи с id = {post_id}')
+
+
+# Обработчик для категорий
+def show_category(request, cat_id):
+    posts = Cats.objects.filter(cat_id=cat_id)
+    categories = Category.objects.all()
+
+    if len(posts) == 0:
+        raise Http404()
+
+    context = {
+        'posts': posts,
+        'categories': categories,
+        'menu': menu,
+        'title': 'Display by category',
+        'cat_selected': cat_id,
+    }
+
+    return render(request, 'cats/index.html', context=context)
