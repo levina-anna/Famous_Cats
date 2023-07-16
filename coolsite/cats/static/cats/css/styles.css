@@ -68,7 +68,8 @@ ul.list-articles li {
 
 .table-page {
 	width: 100%;
-	height: 100%;
+	/* height: 100%; */
+	height: 100vh; /* Задать высоту таблицы в 100% высоты видимой области */
 	vertical-align: top;
 }
 .table-page tr {height: 100%;}
@@ -157,7 +158,7 @@ div.button {
 .table-content {
 	width: 100%;
 	min-height: 100%;
-	height: 100%;
+	/* height: 100%;*/
 }
 
 .left-chapters {
@@ -353,6 +354,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 	font-family: Verdana, Geneva, Arial, Helvetica;
 	text-align: left;
 	overflow: hidden;
+	height: 70px;
 }
 #footer a {
 	text-decoration: underline;
