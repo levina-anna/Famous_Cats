@@ -12,7 +12,7 @@ from .utils import *
 
 # Класс для главной страницы index.html
 class CatsHome(DataMixin, ListView):
-    paginate_by = 3
+    paginate_by = 3 # количество элементов списка на одной странице
     model = Cats
     template_name = 'cats/index.html'
     context_object_name = 'posts'
@@ -28,10 +28,11 @@ class CatsHome(DataMixin, ListView):
 
 # функция представления для страницы "О сайте"
 def about(request):
-    contact_list = Cats.objects.all()
-    paginator = Paginator(contact_list, 3)
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
+    contact_list = Cats.objects.all() # читаем список всех котов
+    paginator = Paginator(contact_list, 3) # создаем экземпляр класса Paginator
+
+    page_number = request.GET.get('page') # отображаем номер текущей странице
+    page_obj = paginator.get_page(page_number) # формируем объект который будет содержать список элементов текущей страницы
     return render(request, 'cats/about.html', {'page_obj': page_obj, 'menu': menu, 'title': 'О сайте'})
 
 
