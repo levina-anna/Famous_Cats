@@ -403,7 +403,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 }
 
 /* Стили для ссылки страницы */
-.list-pages a {
+.list-pages li.page-num a {
     display: inline-block;
     padding: 5px 10px;
     background-color: #f2f2f2;
@@ -414,15 +414,16 @@ ul.lang-list li a:hover {color: #fdc073;}
 }
 
 /* Стили для активной страницы */
-.list-pages .page-num a.active {
+.list-pages li.page-num-selected a {
     background-color: #007bff;
     color: #fff;
 }
 
 /* Стили для ховера на ссылке страницы */
-.list-pages a:hover {
+.list-pages li.page-num a:hover {
     background-color: #007bff;
     color: #fff;
 }
+
 
 /* конец пагинация*/
