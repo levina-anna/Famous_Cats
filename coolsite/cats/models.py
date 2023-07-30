@@ -24,7 +24,7 @@ class Cats(models.Model):
     class Meta:
         verbose_name = "Famous cats"
         verbose_name_plural = "Famous cats"
-        ordering = ['time_create', 'title']
+        ordering = ['id']
 
 
 # Модель для таблицы с категориями
