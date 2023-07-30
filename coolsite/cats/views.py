@@ -12,7 +12,6 @@ from .utils import *
 
 # Класс для главной страницы index.html
 class CatsHome(DataMixin, ListView):
-    paginate_by = 3 # количество элементов списка на одной странице
     model = Cats
     template_name = 'cats/index.html'
     context_object_name = 'posts'
