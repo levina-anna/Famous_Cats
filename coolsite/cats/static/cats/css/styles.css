@@ -382,3 +382,47 @@ ul.lang-list li a:hover {color: #fdc073;}
     min-width: 200px;
     font-size: 16px;
 }
+
+/* пагинация */
+/* Стили для контейнера навигации */
+.list-pages {
+    text-align: center;
+}
+
+/* Стили для списка страниц */
+.list-pages ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Стили для элемента списка страниц */
+.list-pages li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Стили для ссылки страницы */
+.list-pages a {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #f2f2f2;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Стили для активной страницы */
+.list-pages .page-num a.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Стили для ховера на ссылке страницы */
+.list-pages a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* конец пагинация*/
