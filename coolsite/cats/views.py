@@ -56,11 +56,6 @@ def contact(request):
     return HttpResponse("Обратная связь")
 
 
-# функция представления для страницы "Авторизация"
-# def login(request):
-#     return HttpResponse("Авторизация")
-
-
 # Обработчик для страницы 404
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
