@@ -34,7 +34,7 @@ def about(request):
 
     page_number = request.GET.get('page') # отображаем номер текущей странице
     page_obj = paginator.get_page(page_number) # формируем объект который будет содержать список элементов текущей страницы
-    return render(request, 'cats/about.html', {'page_obj': page_obj, 'menu': menu, 'title': 'О сайте'})
+    return render(request, 'cats/about.html', {'page_obj': page_obj, 'menu': menu, 'title': 'About website'})
 
 
 class AddPage(LoginRequiredMixin, DataMixin, CreateView):
