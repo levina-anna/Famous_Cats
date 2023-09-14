@@ -32,6 +32,7 @@ img.img-article-left.thumb {
 
 p.link-read-post {
 	text-align: right;
+	margin-bottom: 30px;
 }
 p.link-read-post a {
 	padding: 10px;
@@ -63,7 +64,7 @@ ul.list-articles {
 	padding: 0;
 }
 ul.list-articles li {
-	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
 }
 
 .table-page {
@@ -108,7 +109,7 @@ ul.mainmenu li a {
 	text-decoration: none;
 }
 ul.mainmenu li a:hover {
-	color: #FDA83D;
+	color: #55abaf;
 }
 
 .panelitems {
