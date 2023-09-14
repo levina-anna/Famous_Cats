@@ -56,6 +56,7 @@ def contact(request):
 
     context = {
         'title': 'Contact',
+        'menu': menu,
     }
     return render(request, 'cats/contact.html', context)
 
