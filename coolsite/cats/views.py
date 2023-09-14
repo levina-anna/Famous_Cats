@@ -33,7 +33,14 @@ def about(request):
 
     page_number = request.GET.get('page') # отображаем номер текущей странице
     page_obj = paginator.get_page(page_number) # формируем объект который будет содержать список элементов текущей страницы
-    return render(request, 'cats/about.html', {'page_obj': page_obj, 'menu': menu, 'title': 'About website'})
+
+    context = {
+        'title': 'About website',
+        'page_obj': page_obj,
+        'menu': menu,
+    }
+
+    return render(request, 'cats/about.html', context)
 
 
 class AddPage(LoginRequiredMixin, DataMixin, CreateView):
@@ -52,7 +59,11 @@ class AddPage(LoginRequiredMixin, DataMixin, CreateView):
 
 # функция представления для страницы "Обратная связь"
 def contact(request):
-    return HttpResponse("Обратная связь")
+
+    context = {
+        'title': 'Contact',
+    }
+    return render(request, 'cats/contact.html', context)
 
 
 # Обработчик для страницы 404
