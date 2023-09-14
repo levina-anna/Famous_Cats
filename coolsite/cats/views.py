@@ -28,15 +28,9 @@ class CatsHome(DataMixin, ListView):
 
 # функция представления для страницы "О сайте"
 def about(request):
-    contact_list = Cats.objects.all() # читаем список всех котов
-    paginator = Paginator(contact_list, 3) # создаем экземпляр класса Paginator
-
-    page_number = request.GET.get('page') # отображаем номер текущей странице
-    page_obj = paginator.get_page(page_number) # формируем объект который будет содержать список элементов текущей страницы
 
     context = {
         'title': 'About website',
-        'page_obj': page_obj,
         'menu': menu,
     }
 
