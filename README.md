@@ -11,10 +11,9 @@
 - Авторизация пользователей.
 - Форма обратной связи.
 
-
 <img src="main_page_screenshot.png" alt="Скриншот главной страницы" style="height:300px;">
 
-### Запуск на сервере:
+### Запуск на сервере
 
 1. Склонировать репозиторий
 - `git clone "https://github.com/levina-anna/Django_learn.git"`
