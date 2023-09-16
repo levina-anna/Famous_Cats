@@ -4,6 +4,7 @@ from django.core.paginator import Paginator
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -26,21 +27,23 @@ class CatsHome(DataMixin, ListView):
         return Cats.objects.filter(is_published=True).select_related('cat')
 
 
-# функция представления для страницы "О сайте"
-def about(request):
+class AboutView(DataMixin, View):
+    def get(self, request):
+        context = {
+            'title': 'About website',
+            'menu':  self.get_menu(),
+        }
+        return render(request, 'cats/about.html', context)
 
-    context = {
-        'title': 'About website',
-        'menu': menu,
-    }
-
-    return render(request, 'cats/about.html', context)
-
+    def get_menu(self):
+        user_menu = menu.copy()
+        if not self.request.user.is_authenticated:
+            user_menu.pop(1)
+        return user_menu
 
 class AddPage(LoginRequiredMixin, DataMixin, CreateView):
     form_class = AddPostForm
     template_name = 'cats/addpage.html'
-    # адрес маршрута куда мы должны перенаправиться когда доб статью
     success_url = reverse_lazy('home')
     login_url = reverse_lazy('home')
     raise_exception = True
@@ -50,15 +53,6 @@ class AddPage(LoginRequiredMixin, DataMixin, CreateView):
         c_def = self.get_user_context(title="Add page")
         return dict(list(context.items()) + list(c_def.items()))
 
-
-# # функция представления для страницы "Обратная связь"
-# def contact(request):
-#
-#     context = {
-#         'title': 'Contact',
-#         'menu': menu,
-#     }
-#     return render(request, 'cats/contact.html', context)
 
 class ContactFormView(DataMixin, FormView):
     form_class = ContactForm
@@ -73,6 +67,7 @@ class ContactFormView(DataMixin, FormView):
     def form_valid(selfself, form):
         print(form.cleaned_data)
         return redirect('home')
+
 
 # Обработчик для страницы 404
 def pageNotFound(request, exception):
@@ -110,6 +105,7 @@ class CatsCategory(DataMixin, ListView):
         return dict(list(context.items()) + list(c_def.items()))
 
 
+# Класс для регистрации
 class RegisterUser(DataMixin, CreateView):
     form_class = RegisterUserForm
     template_name = 'cats/register.html'
@@ -126,6 +122,7 @@ class RegisterUser(DataMixin, CreateView):
         return redirect('home')
 
 
+# Класс для авторизации
 class LoginUser(DataMixin, LoginView):
     form_class = LoginUserForm
     template_name = 'cats/login.html'
