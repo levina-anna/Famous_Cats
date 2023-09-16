@@ -16,8 +16,8 @@
 ### Запуск на сервере
 
 1. Склонировать репозиторий
-- `git clone "https://github.com/levina-anna/Django_learn.git"`
-- `cd Django_learn`
+- `git clone "https://github.com/levina-anna/Famous_Cats.git"`
+- `cd Famous_Cats`
 
 2. Поставить виртуальное окружение
 - `python3 -m venv venv`
@@ -30,7 +30,7 @@
 - `python manage.py migrate`
 
 5. Запустить
-- `cd gvksite/`
+- `cd coolsite/`
 - `python manage.py runserver 0.0.0.0:8001`
 
 ### Требования к окружению
