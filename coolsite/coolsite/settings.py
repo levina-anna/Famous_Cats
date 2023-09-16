@@ -137,3 +137,13 @@ MEDIA_URL = '/media/'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+# Настройка кэширования
+CACHES = {
+    'default': {
+        # Кэшированные данные будут храниться на диске в виде файлов
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        # Путь к корневой папке самого кэша
+        'LOCATION': os.path.join(BASE_DIR, 'coolsite_cache'),
+    }
+}
