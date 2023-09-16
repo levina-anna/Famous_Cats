@@ -3,7 +3,7 @@ from django.views.decorators.cache import cache_page
 from .views import *
 
 urlpatterns = [
-    path('', CatsHome.as_view(), name='home'), # http://127.0.0.1:8000/
+    path('', CatsHome.as_view(), name='home'),
     path('about/', AboutView.as_view(), name='about'),
     path('addpage/', AddPage.as_view(), name='add_page'),
     path('contact/', ContactFormView.as_view(), name='contact'),
@@ -13,4 +13,3 @@ urlpatterns = [
     path('post/<slug:post_slug>/', ShowPost.as_view(), name='post'),
     path('category/<slug:cat_slug>/', CatsCategory.as_view(), name='category'),
 ]
-

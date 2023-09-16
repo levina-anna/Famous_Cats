@@ -12,7 +12,7 @@ from .forms import *
 from .models import *
 from .utils import *
 
-# Класс для главной страницы index.html
+# Класс для главной страницы "index.html"
 class CatsHome(DataMixin, ListView):
     model = Cats
     template_name = 'cats/index.html'
@@ -27,6 +27,7 @@ class CatsHome(DataMixin, ListView):
         return Cats.objects.filter(is_published=True).select_related('cat')
 
 
+# Класс для страницы "about.html"
 class AboutView(DataMixin, View):
     def get(self, request):
         context = {
@@ -41,6 +42,8 @@ class AboutView(DataMixin, View):
             user_menu.pop(1)
         return user_menu
 
+
+# Класс для страницы "addpage.html"
 class AddPage(LoginRequiredMixin, DataMixin, CreateView):
     form_class = AddPostForm
     template_name = 'cats/addpage.html'
@@ -54,6 +57,7 @@ class AddPage(LoginRequiredMixin, DataMixin, CreateView):
         return dict(list(context.items()) + list(c_def.items()))
 
 
+# Класс для страницы "contact.html"
 class ContactFormView(DataMixin, FormView):
     form_class = ContactForm
     template_name = 'cats/contact.html'
@@ -74,6 +78,7 @@ def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
 
 
+# Класс для отображения поста
 class ShowPost(DataMixin, DetailView):
     model = Cats
     template_name = 'cats/post.html'
@@ -135,6 +140,8 @@ class LoginUser(DataMixin, LoginView):
     def get_success_url(self):
         return reverse_lazy('home')
 
+
+# Функция для выхода пользователя
 def logout_user(request):
     logout(request)
     return redirect('login')

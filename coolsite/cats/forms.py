@@ -8,7 +8,6 @@ from .models import *
 
 
 # Класс описывающий форму добавления статьи
-# выставляем только те атрибуты которые должен вводить пользователь
 class AddPostForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -30,6 +29,7 @@ class AddPostForm(forms.ModelForm):
         return title
 
 
+# Класс формы для регистрации пользователей
 class RegisterUserForm(UserCreationForm):
     username = forms.CharField(label='Login', widget=forms.TextInput(attrs={'class': 'form-input'}))
     email = forms.CharField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-input'}))
@@ -41,13 +41,13 @@ class RegisterUserForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2')
 
 
-# Улучшим внешний вид формы авторизации
+# Класс формы для авторизации пользователей
 class LoginUserForm(AuthenticationForm):
     username = forms.CharField(label='Login', widget=forms.TextInput(attrs={'class': 'form-input'}))
     password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
 
 
-# Форма для контактов
+# Класс формы для контактов
 class ContactForm(forms.Form):
     name = forms.CharField(label='Name', max_length=255)
     email = forms.EmailField(label='Email')

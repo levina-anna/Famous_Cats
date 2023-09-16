@@ -11,6 +11,7 @@ a {
 	color: #0059b2;
 	text-decoration: none;
 }
+
 a:hover {
 	color: #CC0000;
 	text-decoration: underline;
@@ -34,6 +35,7 @@ p.link-read-post {
 	text-align: right;
 	margin-bottom: 30px;
 }
+
 p.link-read-post a {
 	padding: 10px;
 	min-width: 100px;
@@ -49,10 +51,12 @@ div.article-panel {
     overflow: hidden;
     color: #555;
 }
+
 div.article-panel p.first {
     margin: 0;
     float: left;
 }
+
 div.article-panel p.last {
     margin: 0;
     float: right;
@@ -63,6 +67,7 @@ ul.list-articles {
 	margin: 0;
 	padding: 0;
 }
+
 ul.list-articles li {
 	border-top: 1px solid #ccc;
 }
@@ -73,6 +78,7 @@ ul.list-articles li {
 	height: 100vh; /* Задать высоту таблицы в 100% высоты видимой области */
 	vertical-align: top;
 }
+
 .table-page tr {height: 100%;}
 
 .clear {clear: both;}
@@ -97,17 +103,20 @@ ul.mainmenu {
 	font-size: 20px;
 	overflow: hidden;
 }
+
 ul.mainmenu li {
 	float: left;
 	margin: 18px 40px 0 30px;
 }
 ul.mainmenu li.logo {margin: 0;}
+
 ul.mainmenu li.last {float: right;}
 
 ul.mainmenu li a {
 	color: #c1c1c1;
 	text-decoration: none;
 }
+
 ul.mainmenu li a:hover {
 	color: #55abaf;
 }
@@ -123,10 +132,12 @@ ul.langitem {
 	padding: 0;
 	max-width: 300px
 }
+
 ul.langitem li {
 	margin: 10px 0 0 0;
 	width: 100%;
 }
+
 ul.langitem li.image {
 	margin: 0;
 	text-align: center;
@@ -134,19 +145,23 @@ ul.langitem li.image {
 	height: 250px;
 	overflow: hidden;
 }
+
 ul.langitem li.descr {
 	color: #777;
 	height: 170px;
 	overflow: hidden;
 }
+
 ul.langitem li a {
 	color: #fdc073;
 	text-decoration: none;
 	font-size: 20px;
 }
+
 ul.langitem li a:hover {
 	color: #FDA83D;
 }
+
 div.button {
 	background: #3F4137;
 	max-width: 200px;
@@ -159,7 +174,6 @@ div.button {
 .table-content {
 	width: 100%;
 	min-height: 100%;
-	/* height: 100%;*/
 }
 
 .left-chapters {
@@ -168,6 +182,7 @@ div.button {
 	border-right: 1px solid #ccc;
 	min-height: 100%;
 }
+
 .left-chapters ul {
 	width: 230px;
 	min-height: 100%;
@@ -176,15 +191,18 @@ div.button {
 	list-style: none;
 	font-size: 20px;
 }
+
 .left-chapters ul li {
 	margin: 30px 0 0 0;
 	color: #999;
 }
+
 .left-chapters ul li.selected {color: #0059b2; }
 .left-chapters ul li a {
 	color: #444;
 	text-decoration: none;
 }
+
 .left-chapters ul li a:hover { color: #CC0000; }
 .left-chapters ul li.share {margin: 60px 0 0 0;}
 .left-chapters ul li.share p {margin: 30px 0 30px 0;}
@@ -217,18 +235,22 @@ ul.breadcrumbs {
 	font-size: 20px;
 	font-family: Sans-serif, Arial, Tahoma;
 }
+
 ul.breadcrumbs li {
 	display: inline-block;
 }
+
 ul.breadcrumbs li a {
 	color: #0059b2;
 	text-decoration: none;
 }
+
 ul.breadcrumbs li a:hover { color: #CC0000; }
 ul.breadcrumbs li:after{
 	padding: 0 10px 0 10px;
 	content: "\2192";
 }
+
 ul.breadcrumbs li.last:after {content: "";}
 
 ul.control {
@@ -239,6 +261,7 @@ ul.control {
 	font-size: 18px;
 	width: 100%;
 }
+
 ul.control li {	float: left; padding: 0 0 0 10px;}
 ul.control li.first:before {content: "\2190"; padding: 0 10px 0 0;}
 ul.control li.last {float: right; padding: 0 40px 0 0;}
@@ -253,13 +276,16 @@ ul.content-table {
 	font-family: Sans-serif, Arial, Tahoma;
 	font-size: 28px;
 }
+
 ul.content-table li {
 	margin: 0 0 40px 0;
 }
+
 ul.content-table li a {
 	color: #BB5715;
 	text-decoration: none;
 }
+
 ul.content-table li a:hover {color: #F0711C;}
 
 .content-text {
@@ -268,6 +294,7 @@ ul.content-table li a:hover {color: #F0711C;}
 	font-size: 20px;
 	font-family: Yandex Sans Display Light;
 }
+
 .content-text h1 {font-size: 32px;}
 
 ul.lang-list {
@@ -282,10 +309,12 @@ ul.lang-list {
 	font-size: 18px;
 	font-family: Sans-serif, Arial, Tahoma;
 }
+
 ul.lang-list li {
 	display: inline-block;
 	margin-left: 40px;
 }
+
 ul.lang-list li.selected {color: #fdc073; border-bottom: 1px solid #fdc073;}
 ul.lang-list li a {
 	color: #eee;
@@ -312,24 +341,29 @@ ul.lang-list li a:hover {color: #fdc073;}
 	margin: 40px 0 60px 0;
 	font-family: Sans-serif, Arial, Tahoma;
 }
+
 .list-topic p {
 	margin: 0;
 	font-size: 28px;
 }
+
 .list-topic ol {
 	columns: 2;
 	-webkit-columns: 2;
 	column-gap: 40px;
 }
+
 .list-topic ol li {
 	display: list-item;
 	margin: 10px 10px 0 0px;
 	padding: 0 0 0 10px;
 }
+
 .list-topic ol li a {
 	color: #0059b2;
 	text-decoration: none;
 }
+
 .list-topic ol li a:hover {color: #CC0000;}
 
 .highlight {
@@ -340,11 +374,13 @@ ul.lang-list li a:hover {color: #fdc073;}
 	overflow-y: hidden;
 	background: #f0f0f0;
 }
+
 .highlight p { margin: 0; }
 .highlight .block {
 	width: 100%;
 	margin: 0;
 }
+
 .highlight .block p { margin: 0; }
 
 .quote {
@@ -356,7 +392,6 @@ ul.lang-list li a:hover {color: #fdc073;}
 
 #footer {
 	box-sizing: border-box;
-
 	background: #000000e0;
 	padding: 5px;
 	color: #aaa;
@@ -366,6 +401,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 	overflow: hidden;
 	height: 70px;
 }
+
 #footer a {
 	text-decoration: underline;
 	color: #aaa;
@@ -393,26 +429,23 @@ ul.lang-list li a:hover {color: #fdc073;}
     font-size: 16px;
 }
 
-/* пагинация */
-/* Стили для контейнера навигации */
+
 .list-pages {
     text-align: center;
 }
 
-/* Стили для списка страниц */
+
 .list-pages ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* Стили для элемента списка страниц */
 .list-pages li {
     display: inline-block;
     margin-right: 5px;
 }
 
-/* Стили для ссылки страницы */
 .list-pages li.page-num a {
     display: inline-block;
     padding: 5px 10px;
@@ -423,16 +456,12 @@ ul.lang-list li a:hover {color: #fdc073;}
     transition: background-color 0.3s ease;
 }
 
-/* Стили для активной страницы */
 .list-pages li.page-num-selected a {
     background-color: #007bff;
     color: #fff;
 }
 
-/* Стили для ховера на ссылке страницы */
 .list-pages li.page-num a:hover {
     background-color: #007bff;
     color: #fff;
 }
-
-
