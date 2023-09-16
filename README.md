@@ -27,10 +27,11 @@
 - `pip install -r requirements.txt`
 
 4. Применить миграции:
+- `cd coolsite/`
+- `python manage.py makemigrations`
 - `python manage.py migrate`
 
 5. Запустить
-- `cd coolsite/`
 - `python manage.py runserver 0.0.0.0:8001`
 
 ### Требования к окружению
