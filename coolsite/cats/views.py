@@ -4,7 +4,7 @@ from django.core.paginator import Paginator
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import *
@@ -51,15 +51,28 @@ class AddPage(LoginRequiredMixin, DataMixin, CreateView):
         return dict(list(context.items()) + list(c_def.items()))
 
 
-# функция представления для страницы "Обратная связь"
-def contact(request):
+# # функция представления для страницы "Обратная связь"
+# def contact(request):
+#
+#     context = {
+#         'title': 'Contact',
+#         'menu': menu,
+#     }
+#     return render(request, 'cats/contact.html', context)
 
-    context = {
-        'title': 'Contact',
-        'menu': menu,
-    }
-    return render(request, 'cats/contact.html', context)
+class ContactFormView(DataMixin, FormView):
+    form_class = ContactForm
+    template_name = 'cats/contact.html'
+    success_url = reverse_lazy('home')
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title="Feedback")
+        return dict(list(context.items()) + list(c_def.items()))
+
+    def form_valid(selfself, form):
+        print(form.cleaned_data)
+        return redirect('home')
 
 # Обработчик для страницы 404
 def pageNotFound(request, exception):
