@@ -23,6 +23,7 @@ from coolsite import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('captcha/', include('captcha.urls')),
     path('', include('cats.urls'))
 ]
 # маршрут для обработки медиа-файлов только при включенном режиме отладки
