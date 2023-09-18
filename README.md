@@ -32,7 +32,7 @@
 - `python manage.py migrate`
 
 5. Запустить
-- `python manage.py runserver 0.0.0.0:8001`
+- `python manage.py runserver`
 
 ### Требования к окружению
 
