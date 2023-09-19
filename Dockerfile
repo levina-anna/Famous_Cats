@@ -1,24 +1,26 @@
+# Используем образ Python
 FROM python:3.11.5
 
-SHELL ["/bin/bash", "-c"]
+# Устанавливаем переменную окружения для Django
+ENV DJANGO_SETTINGS_MODULE=gvksite.settings
 
-# set environment variables
-ENV PYTHONDONTWRITTEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+# Устанавливаем рабочую директорию внутри контейнера
+WORKDIR /gvk
 
-# Обновляем pip
-RUN pip install --upgrade pip
+# Копируем файлы requirements.txt в контейнер
+COPY requirements.txt .
 
-# Устанавливам необходимые зависимости для работы программы
-RUN apt update && apt -qy install gcc libjpeg-dev libxslt-dev \
-    libpq-dev libmariadb-dev libmariadb-dev-compat gettext \
-     cron openssh-client flake8 locales vim
+# Устанавливаем зависимости Django
+RUN pip install -r requirements.txt
 
-# Создаем пользователя
-RUN useradd -rms /bin/bash yt && chmod 777 /opt /run
+# Копируем все файлы проекта в контейнер
+COPY . . /gvk
 
-# Создаем текущий рабочий каталог внутри контейнера
-WORKDIR /yt
+# Переход
+WORKDIR /gvk/gvksite
 
-# Создаем директории для static и media (для volume)
-RUN mkdir /yt/static && mkdir /yt/media && chown -R yt:yt /yt && chmod 755 /yt
+# Открываем порт, на котором будет работать приложение Django
+EXPOSE 8000
+
+# Запускаем приложение при старте контейнера
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
