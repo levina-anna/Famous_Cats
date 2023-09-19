@@ -14,7 +14,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Копируем все файлы проекта в контейнер
-COPY . . /Famous_Cats
+COPY . /Famous_Cats
 
 # Переход
 WORKDIR /Famous_Cats/coolsite
