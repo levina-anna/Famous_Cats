@@ -2,10 +2,10 @@
 FROM python:3.11.5
 
 # Устанавливаем переменную окружения для Django
-ENV DJANGO_SETTINGS_MODULE=gvksite.settings
+ENV DJANGO_SETTINGS_MODULE=coolsite.settings
 
 # Устанавливаем рабочую директорию внутри контейнера
-WORKDIR /gvk
+WORKDIR /Famous_Cats
 
 # Копируем файлы requirements.txt в контейнер
 COPY requirements.txt .
@@ -14,10 +14,10 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Копируем все файлы проекта в контейнер
-COPY . . /gvk
+COPY . . /Famous_Cats
 
 # Переход
-WORKDIR /gvk/gvksite
+WORKDIR /Famous_Cats/coolsite
 
 # Открываем порт, на котором будет работать приложение Django
 EXPOSE 8000
