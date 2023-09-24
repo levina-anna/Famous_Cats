@@ -6,7 +6,6 @@ ENV DJANGO_SETTINGS_MODULE=coolsite.settings
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-
 # Устанавливаем рабочую директорию внутри контейнера
 WORKDIR /Famous_Cats
 
