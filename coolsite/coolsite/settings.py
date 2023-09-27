@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'coolsite.urls'
@@ -120,6 +121,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 # Путь к общей папки static
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # список нестандартных путей
 STATICFILES_DIRS = []
 
